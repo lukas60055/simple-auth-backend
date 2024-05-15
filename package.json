@@ -1,0 +1,52 @@
+{
+  "name": "simple-auth-backend",
+  "version": "1.0.0",
+  "description": "An authentication API server built with Express.js and TypeScript, utilizing MariaDB for the database and Knex.js for database management. It features user authentication, role management, and password reset functionality.",
+  "engines": {
+    "node": ">18.15.0",
+    "npm": ">9.5.0"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "prod": "pm2 start ts-node --name \"backend\" -- src/index.ts -i -1",
+    "migrate": "dotenv -e .env -- knex migrate:latest --knexfile src/databases/knexfile.ts",
+    "seed": "dotenv -e .env -- knex seed:run --knexfile src/databases/knexfile.ts"
+  },
+  "author": {
+    "name": "Łukasz Duda",
+    "email": "kontakt@lukaspro.pl",
+    "url": "https://lukaspro.pl/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lukas60055/simple-auth-backend"
+  },
+  "bugs": {
+    "url": "https://github.com/lukas60055/simple-auth-backend/issues"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.12.7",
+    "@types/nodemailer": "^6.4.14"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.1",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.9.13",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

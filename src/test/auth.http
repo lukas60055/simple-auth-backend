@@ -1,0 +1,42 @@
+@host = http://localhost:8821/auth
+
+###
+POST {{host}}/login
+Content-Type: application/json
+
+{
+    "email": "example@example.com",
+    "password": "Test123#"
+}
+
+###
+POST {{host}}/register
+Content-Type: application/json
+
+{
+    "email": "example@example.com",
+    "password": "Test123#",
+    "firstName": "Adam",
+    "lastName": "Kowalski"
+}
+
+###
+POST {{host}}/logout
+Content-Type: application/json
+
+###
+POST {{host}}/requestResetPassword
+Content-Type: application/json
+
+{
+    "email": "example@example.com"
+}
+
+###
+POST {{host}}/resetPassword
+Content-Type: application/json
+
+{
+    "token": "",
+    "password": ""
+}

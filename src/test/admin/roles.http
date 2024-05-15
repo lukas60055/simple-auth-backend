@@ -1,0 +1,5 @@
+@host = http://localhost:8821/admin
+
+###
+GET {{host}}/roles/
+Content-Type: application/json

@@ -1,0 +1,37 @@
+@host = http://localhost:8821/admin
+
+###
+GET {{host}}/users/
+Content-Type: application/json
+
+###
+GET {{host}}/users/3
+Content-Type: application/json
+
+###
+POST {{host}}/users/
+Content-Type: application/json
+
+{
+    "email": "example@example.com",
+    "password": "Test123#",
+    "firstName": "Adam",
+    "lastName": "Kowalski",
+    "role": "admin"
+}
+
+###
+PUT {{host}}/users/
+Content-Type: application/json
+
+{
+    "email": "example@example.com",
+    "password": "Test12345#",
+    "firstName": "Adam",
+    "lastName": "Kowalski",
+    "role": "moderator"
+}
+
+###
+DELETE {{host}}/users/1
+Content-Type: application/json
